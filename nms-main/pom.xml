@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nms</groupId>
+  <artifactId>nms-main</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1</version>
+  <name>nms-main</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+	<repository>
+		<id>wxzte</id>
+		<name>Public Release Repository</name>
+		<url>http://192.168.200.61:8081/nexus/content/repositories/wxzte</url>
+	</repository>
+	<snapshotRepository>
+		<id>thirdparty</id>
+		<name>Public Snapshot Repository</name>
+		<url>http://192.168.200.61:8081/nexus/content/repositories/thirdparty</url>
+	</snapshotRepository>
+</distributionManagement>
+  <modules>
+	<module>nms-domain</module>
+	<module>nms-dao</module>
+	<module>nms-service</module>
+	<module>nms-web</module>
+  </modules>
+</project>

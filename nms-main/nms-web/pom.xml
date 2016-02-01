@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.nms</groupId>
+    <artifactId>nms-main</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>nms-web</artifactId>
+  <version>0.0.1</version>
+  <packaging>war</packaging>
+  <name>nms-web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>    
+	<!--
+     system-web依赖system-service
+     -->
+     <dependency>
+      <groupId>com.nms</groupId>
+       <artifactId>nms-service</artifactId>
+       <version>${project.version}</version>
+     </dependency>
+  </dependencies>
+  <build>
+    <finalName>nms-web</finalName>
+	<plugins>
+         <!--配置Jetty插件-->
+         <plugin>
+             <groupId>org.mortbay.jetty</groupId>
+             <artifactId>maven-jetty-plugin</artifactId>
+         </plugin>
+		 <plugin>
+			<groupId>org.codehaus.mojo</groupId>  
+			<artifactId>tomcat-maven-plugin</artifactId>  
+			<version>1.0</version>  
+			<configuration>  
+			<port>9009</port><SPAN style="COLOR: #ff0000"></SPAN> 
+			<path>/client</path>  
+			<path>/uc</path>  
+			</configuration>
+			</plugin>
+		</plugins>
+  </build>
+</project>
